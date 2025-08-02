@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Video with Weather Widget</title>
+    <title>Lokin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="weather-widget.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="video-container">
+        <div id="youtube-player"></div>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Weather Widget -->
+    <div class="weather-widget">
+        <div class="weather-left">
+            <div class="wrap">
+                <div class="weather-icon" id="weather-icon">
+                    <!-- Weather icon will be inserted here -->
+                </div>
+                <div class="weather-condition" id="weather-condition">Clear Sky</div>
+            </div>
+            <div class="temperature" id="temperature">22</div>
+            <div class="location" id="location">Bangalore</div>
+            
+            <!-- Illustration container -->
+            <div class="illustration-container" id="illustration-container" style="display: none;">
+                <div class="illustration-text" id="illustration-text"></div>
+                <img class="weather-illustration" id="weather-illustration" src="" alt="Weather illustration">
+            </div>
+        </div>
+        <div class="weather-right">
+            <div class="m1">
+                <div class="current-time" id="current-time">13:36</div>
+            </div>
+            <div class="s1">
+                <div class="sunrise-icon">
+                    <img src="icons/sunrise.svg" alt="Sunrise" width="24" height="24">
+                </div>
+                <div class="sunrise-time" id="sunrise-time">6:21</div>
+            </div>
+            <div class="s2">
+                <div class="sunset-icon">
+                    <img src="icons/sunset.svg" alt="Sunset" width="24" height="24">
+                </div>
+                <div class="sunset-time" id="sunset-time">7:35</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <button class="unmute-btn" onclick="unmuteVideo()">Unmute</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="weather-widget.js"></script>
+</body>
+</html> 
