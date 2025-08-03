@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Inter, sans-serif;
     overflow: hidden;
     position: relative;
 }
@@ -61,6 +61,637 @@ body {
 
 .unmute-btn:active {
     transform: scale(0.95);
+}
+
+/* Productivity Timer Widget Styles */
+.productivity-timer-container {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Motivational Message Bubble - Top Center */
+.motivation-bubble {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 18px;
+    gap: 6px;
+    width: 352.55px;
+    height: 60px;
+    background: rgba(19, 19, 21, 0.55);
+    border: 1px solid #484848;
+    backdrop-filter: blur(12.5px);
+    border-radius: 12px;
+    animation: slideInDown 0.6s ease-out;
+}
+
+/* Lockin Message Bubble */
+.lockin-bubble {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 10px;
+    gap: 6px;
+    width: 220px;
+    height: 44px;
+    background: rgba(19, 19, 21, 0.55);
+    border: 1px solid #484848;
+    backdrop-filter: blur(12.5px);
+    border-radius: 12px;
+}
+
+.profile-pic {
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
+    background: url(image.png);
+    border: 1px solid #484848;
+    border-radius: 999px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 999px;
+}
+
+.lockin-text {
+    width: 153px;
+    height: 19px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FCFCFC;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.flames {
+    font-size: 16px;
+}
+
+/* Weather Widget Animation */
+.weather-widget {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+/* Lockin Message Bubble Animation */
+.lockin-bubble {
+    animation: fadeInUp 0.7s ease-out 0.2s both;
+}
+
+/* Timer Frame Animation */
+.timer-frame {
+    animation: fadeInUp 0.7s ease-out 0.4s both;
+}
+
+.motivation-profile-pic {
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
+    background: url(image.png);
+    border: 1px solid #484848;
+    border-radius: 999px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    overflow: hidden;
+}
+
+.motivation-profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 999px;
+}
+
+.motivation-text {
+    width: 278.55px;
+    height: 36px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #D2D2D2;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    word-wrap: break-word;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Hover animations for interactive elements */
+.play-btn:hover, .stop-btn:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+.lockin-bubble:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+.timer-frame:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+/* Music Control Widget */
+.music-control-widget {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 15;
+}
+
+.music-toggle-btn {
+    width: 48px;
+    height: 48px;
+    background: rgba(19, 19, 21, 0.55);
+    border: 1px solid #484848;
+    backdrop-filter: blur(12.5px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.music-toggle-btn:hover {
+    transform: scale(1.05);
+    background: rgba(19, 19, 21, 0.75);
+}
+
+/* Music Modal */
+.music-modal {
+    position: fixed;
+    bottom: 71.58px;
+    right: 25px;
+    z-index: 15;
+    animation: slideInUp 0.4s ease-out;
+}
+
+.music-modal-content {
+    background: rgba(19, 19, 21, 0.55);
+    border: 1px solid #484848;
+    backdrop-filter: blur(12.5px);
+    border-radius: 16px;
+    padding: 20px;
+    width: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.music-title {
+    color: #FCFCFC;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.music-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.music-option {
+    background: rgba(42, 42, 42, 0.8);
+    border: 1px solid #484848;
+    border-radius: 8px;
+    width: 100%;
+    color: #FCFCFC;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.music-option:hover {
+    background: rgba(60, 60, 60, 0.8);
+}
+
+.music-option.active {
+    background: #009BFF;
+    border-color: #009BFF;
+}
+
+.music-option:nth-child(4),
+.music-option:nth-child(5) {
+    grid-column: span 1.5;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.volume-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(42, 42, 42, 0.8);
+    border: 1px solid #484848;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 32px;
+    min-width: 32px;
+}
+
+.volume-icon:hover {
+    background: rgba(60, 60, 60, 0.8);
+}
+
+.volume-icon svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+.volume-slider {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #FCFCFC;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #FCFCFC;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.coming-soon {
+    color: #999;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Activity Log Widget */
+.activity-log-widget {
+    position: fixed;
+    bottom: 25px;
+    right: 85px;
+    z-index: 15;
+}
+
+.log-toggle-btn {
+    width: 48px;
+    height: 48px;
+    background: rgba(19, 19, 21, 0.55);
+    border: 1px solid #484848;
+    backdrop-filter: blur(12.5px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.log-toggle-btn:hover {
+    transform: scale(1.05);
+    background: rgba(19, 19, 21, 0.75);
+}
+
+/* Activity Log Modal */
+.activity-log-modal {
+    position: fixed;
+    bottom: 85px;
+    right: 85px;
+    z-index: 15;
+    animation: slideInUp 0.4s ease-out;
+}
+
+.activity-log-content {
+    background: rgba(19, 19, 21, 0.55);
+    border: 1px solid #484848;
+    backdrop-filter: blur(12.5px);
+    border-radius: 16px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.log-title {
+    color: #FCFCFC;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.today-stats {
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-label {
+    color: #CCC;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.stat-value {
+    color: #FCFCFC;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.session-history {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.session-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    background: rgba(42, 42, 42, 0.5);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.session-time {
+    color: #FCFCFC;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.session-duration {
+    color: #009BFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.clear-history-btn {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 59, 48, 0.8);
+    border: 1px solid #FF3B30;
+    border-radius: 8px;
+    color: #FCFCFC;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.clear-history-btn:hover {
+    background: rgba(255, 59, 48, 1);
+}
+
+.timer-frame {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 6px;
+    width: 422px;
+    height: 160px;
+    background: rgba(19, 19, 21, 0.55);
+    border: 1px solid #484848;
+    box-shadow: inset -3px 0px 1px rgba(25, 25, 25, 0.24), inset 0px -3px 1px rgba(25, 25, 25, 0.24), inset 3px 0px 1px rgba(25, 25, 25, 0.24), inset 0px 3px 1px rgba(25, 25, 25, 0.24);
+    backdrop-filter: blur(12.5px);
+    border-radius: 25px;
+}
+
+.timer-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.timer-time {
+    width: 100%;
+    height: 80px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 80px;
+    color: #FCFCFC;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    text-align: center;
+}
+
+.timer-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    gap: 12px;
+    width: 140px;
+    height: 40px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.play-btn {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 128, 0, 0.9);
+    border: 1px solid #434343;
+    backdrop-filter: blur(12.5px);
+    border-radius: 999px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    background: rgba(0, 150, 0, 0.9);
+    transform: scale(1.05);
+}
+
+.play-btn.paused {
+    background: rgba(42, 42, 42, 0.9);
+}
+
+.play-btn.paused:hover {
+    background: rgba(60, 60, 60, 0.9);
+    transform: scale(1.05);
+}
+
+.stop-btn {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(42, 42, 42, 0.9);
+    border: 1px solid #434343;
+    backdrop-filter: blur(12.5px);
+    border-radius: 999px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.stop-btn:hover {
+    background: rgba(60, 60, 60, 0.9);
+    transform: scale(1.05);
+}
+
+.reset-btn {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 59, 48, 0.9);
+    border: 1px solid #434343;
+    backdrop-filter: blur(12.5px);
+    border-radius: 999px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: rgba(255, 59, 48, 1);
+    transform: scale(1.05);
+}
+
+.play-btn svg, .stop-btn svg {
+    width: 18px;
+    height: 18px;
 }
 
 .title {

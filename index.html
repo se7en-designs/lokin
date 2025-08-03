@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background Video with Weather Widget</title>
+    <title>Lokin</title>
     <title>Lokin</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="weather-widget.css">
@@ -14,20 +14,18 @@
         <div id="youtube-player"></div>
         <div class="video-overlay"></div>
     </div>
+    
 
-    <!-- Weather Widget -->
     <div class="weather-widget">
         <div class="weather-left">
             <div class="wrap">
                 <div class="weather-icon" id="weather-icon">
-                    <!-- Weather icon will be inserted here -->
                 </div>
                 <div class="weather-condition" id="weather-condition">Clear Sky</div>
             </div>
             <div class="temperature" id="temperature">22</div>
             <div class="location" id="location">Bangalore</div>
             
-            <!-- Illustration container -->
             <div class="illustration-container" id="illustration-container" style="display: none;">
                 <div class="illustration-text" id="illustration-text"></div>
                 <img class="weather-illustration" id="weather-illustration" src="" alt="Weather illustration">
@@ -52,11 +50,133 @@
         </div>
     </div>
 
-    <div class="content">
-        <button class="unmute-btn" onclick="unmuteVideo()">Unmute</button>
+    <!-- Activity Log Widget -->
+    <div class="activity-log-widget">
+        <button class="log-toggle-btn" id="log-toggle-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#FCFCFC" stroke-width="2" fill="none"/>
+                <polyline points="14,2 14,8 20,8" stroke="#FCFCFC" stroke-width="2" fill="none"/>
+                <line x1="16" y1="13" x2="8" y2="13" stroke="#FCFCFC" stroke-width="2"/>
+                <line x1="16" y1="17" x2="8" y2="17" stroke="#FCFCFC" stroke-width="2"/>
+                <polyline points="10,9 9,9 8,9" stroke="#FCFCFC" stroke-width="2" fill="none"/>
+            </svg>
+        </button>
+        
+        <!-- Activity Log Modal -->
+        <div class="activity-log-modal" id="activity-log-modal" style="display: none;">
+            <div class="activity-log-content">
+                <h3 class="log-title">Your Lock-in Sessions</h3>
+                
+                <div class="today-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Today's Total:</span>
+                        <span class="stat-value" id="today-total">00:00:00</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Current Session:</span>
+                        <span class="stat-value" id="current-session">00:00:00</span>
+                    </div>
+                </div>
+                
+                <div class="session-history" id="session-history">
+                    <!-- Session history will be populated here -->
+                </div>
+                
+                <div class="log-footer">
+                    <button class="clear-history-btn" id="clear-history-btn">Clear History</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Music Control Widget -->
+    <div class="music-control-widget">
+        <button class="music-toggle-btn" id="music-toggle-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M9 18V5l12-2v13" stroke="#FCFCFC" stroke-width="2" fill="none"/>
+                <circle cx="6" cy="18" r="3" stroke="#FCFCFC" stroke-width="2" fill="none"/>
+                <circle cx="18" cy="16" r="3" stroke="#FCFCFC" stroke-width="2" fill="none"/>
+            </svg>
+        </button>
+        
+        <!-- Music Control Modal -->
+        <div class="music-modal" id="music-modal" style="display: none;">
+            <div class="music-modal-content">
+                <h3 class="music-title">What do you want to listen ?</h3>
+                
+                <div class="music-options">
+                    <button class="music-option active" data-type="radio">Radio</button>
+                    <button class="music-option" data-type="lofi">Lofi</button>
+                    <button class="music-option" data-type="drums">Drums</button>
+                    <button class="music-option" data-type="acoustic">Acoustic Guitar</button>
+                    <button class="music-option" data-type="instrumental">Instrumental</button>
+                </div>
+                
+                <div class="volume-control">
+                    <div class="volume-icon" id="volume-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M11 5L6 9H2v6h4l5 4V5z" stroke="#FCFCFC" stroke-width="1.5" fill="none"/>
+                            <line x1="23" y1="9" x2="17" y2="15" stroke="#FCFCFC" stroke-width="1.5"/>
+                            <line x1="17" y1="9" x2="23" y2="15" stroke="#FCFCFC" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="0">
+                </div>
+                
+                <div class="coming-soon">More controls coming soon.....</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="productivity-timer-container">
+        <div class="lockin-bubble">
+            <div class="profile-pic">
+                <img src="images/profile.png" alt="Profile" width="32" height="32">
+            </div>
+            <div class="lockin-text">
+                <span>Let's lockin Now 🔥</span>
+            </div>
+        </div>
+        
+        <div class="timer-frame">
+            <div class="timer-display">
+                <div class="timer-time" id="timer-time">00:00:00</div>
+                <div class="timer-controls">
+                    <button class="play-btn" id="play-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                            <path d="M8 5v14l11-7z" stroke="#FCFCFC" stroke-width="1.125" fill="none"/>
+                        </svg>
+                    </button>
+                    <button class="stop-btn" id="stop-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                            <rect x="6" y="6" width="12" height="12" stroke="#FCFCFC" stroke-width="1.125" fill="none"/>
+                        </svg>
+                    </button>
+                    <button class="reset-btn" id="reset-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" stroke="#FCFCFC" stroke-width="1.125" fill="none"/>
+                            <path d="M21 3v5h-5" stroke="#FCFCFC" stroke-width="1.125" fill="none"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="motivation-bubble" id="motivation-bubble" style="display: none;">
+        <div class="motivation-profile-pic">
+            <img src="images/profile.png" alt="Study Buddy" width="32" height="32">
+        </div>
+        <div class="motivation-text" id="motivation-text">
+            "yoooo, nioce let's sit for 25 minutes ill remind you to take a break"
+        </div>
     </div>
 
     <script src="script.js"></script>
     <script src="weather-widget.js"></script>
+    <script src="timer-widget.js"></script>
+    <script src="music-control.js"></script>
+    <script src="activity-log.js"></script>
 </body>
 </html> 
+<!-- hi -->

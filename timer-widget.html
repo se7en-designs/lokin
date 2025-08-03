@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Widget</title>
+    <link rel="stylesheet" href="timer-widget.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="timer-container">
+        <div class="preset-buttons">
+            <button class="preset-btn" data-time="5">5 mins</button>
+            <button class="preset-btn" data-time="10">10 mins</button>
+            <button class="preset-btn active" data-time="20">20 mins</button>
+        </div>
+        
+        <div class="timer-display">
+            <div class="timer-info">
+                <div class="timer-label">Timer</div>
+                <div class="timer-time" id="timer-time">20:00</div>
+                <button class="stop-btn" id="stop-btn">Stop</button>
+            </div>
+            
+            <div class="timer-progress">
+                <div class="progress-circle">
+                    <svg class="progress-svg" width="120" height="120" viewBox="0 0 120 120">
+                        <circle class="progress-bg" cx="60" cy="60" r="50" stroke="#2a2a2a" stroke-width="8" fill="none"/>
+                        <circle class="progress-fill" cx="60" cy="60" r="50" stroke="#00ffff" stroke-width="8" fill="none" stroke-dasharray="314" stroke-dashoffset="314"/>
+                    </svg>
+                    <button class="play-pause-btn" id="play-pause-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M8 5v14l11-7z" fill="white"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category Buttons -->
+        <div class="category-buttons">
+            <button class="category-btn active" data-category="design">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Design
+            </button>
+            <button class="category-btn" data-category="code">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Code
+            </button>
+            <button class="category-btn" data-category="study">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Study
+            </button>
+        </div>
+    </div>
+
+    <script src="timer-widget.js"></script>
+</body>
+</html> 
