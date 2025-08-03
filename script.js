@@ -1,6 +1,3 @@
-let player;
-
-// Load YouTube API
 function loadYouTubeAPI() {
     const tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
@@ -8,9 +5,8 @@ function loadYouTubeAPI() {
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
 
-// Initialize YouTube player
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('youtube-player', {
+    window.player = new YT.Player('youtube-player', {
         height: '100%',
         width: '100%',
         videoId: 'amfWIRasxtI',
@@ -25,14 +21,24 @@ function onYouTubeIframeAPIReady() {
             'modestbranding': 1,
             'iv_load_policy': 3,
             'disablekb': 1,
-            'fs': 0
+            'fs': 0,
+        },
+        events: {
+            'onReady': onPlayerReady
         }
     });
 }
 
+function onPlayerReady(event) {
+    console.log('YouTube player is ready');
+    if (window.musicController) {
+        window.musicController.player = window.player;
+    }
+}
+
 function unmuteVideo() {
-    if (player && player.unMute) {
-        player.unMute();
+    if (window.player && window.player.unMute) {
+        window.player.unMute();
     }
 }
 

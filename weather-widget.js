@@ -1,13 +1,10 @@
-// OpenWeather API Configuration
 const API_KEY = '51a6a262ff836e855113056745aa87c7';
 
-// User location variables
 let userLatitude = null;
 let userLongitude = null;
 let userCity = 'Loading...';
 let userCountry = '';
 
-// Check if weather widget elements exist before updating
 function updateWeatherElement(id, value) {
     const element = document.getElementById(id);
     if (element) {
@@ -15,29 +12,27 @@ function updateWeatherElement(id, value) {
     }
 }
 
-// Weather icon mapping (you can replace these with your own icons)
 const weatherIcons = {
-    '01d': '☀️', // clear sky day
-    '01n': '🌙', // clear sky night
-    '02d': '⛅', // few clouds day
-    '02n': '☁️', // few clouds night
-    '03d': '☁️', // scattered clouds
+    '01d': '☀️', 
+    '01n': '🌙',
+    '02d': '⛅', 
+    '02n': '☁️', 
+    '03d': '☁️',
     '03n': '☁️',
-    '04d': '☁️', // broken clouds
+    '04d': '☁️', 
     '04n': '☁️',
-    '09d': '🌧️', // shower rain
+    '09d': '🌧️',
     '09n': '🌧️',
-    '10d': '🌦️', // rain day
-    '10n': '🌧️', // rain night
-    '11d': '⛈️', // thunderstorm
+    '10d': '🌦️', 
+    '10n': '🌧️', 
+    '11d': '⛈️', 
     '11n': '⛈️',
-    '13d': '❄️', // snow
+    '13d': '❄️', 
     '13n': '❄️',
-    '50d': '🌫️', // mist
+    '50d': '🌫️', 
     '50n': '🌫️'
 };
 
-// Update current time
 function updateTime() {
     const now = new Date();
     const hours = now.getHours().toString().padStart(2, '0');
